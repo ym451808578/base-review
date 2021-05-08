@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bio" />
+        <module name="activemq" />
         <module name="nio" />
         <module name="io" />
       </profile>

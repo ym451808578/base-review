@@ -12,6 +12,7 @@
     <module>io</module>
       <module>bio</module>
       <module>nio</module>
+      <module>activemq</module>
   </modules>
 
   <name>base-review</name>
