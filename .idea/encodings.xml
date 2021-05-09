@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/activemq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bio/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/boot-mq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nio/src/main/java" charset="UTF-8" />
   </component>

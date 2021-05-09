@@ -9,7 +9,7 @@ import javax.jms.*;
  * @Date 2021/5/8 11:10
  */
 public class Producer {
-    private static final String ACTIVEMQ_URL = "tcp://192.168.30.130:61616";
+    private static final String ACTIVEMQ_URL = "tcp://192.168.175.128:61618";
     private static final String QUEUE_NAME = "my_queue";
 
     public static void main(String[] args) {

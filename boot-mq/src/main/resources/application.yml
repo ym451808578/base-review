@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  activemq:
+    broker-url: nio://192.168.175.128:61618
+    user: admin
+    password: admin
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 20
+    packages:
+      trust-all: true #是否信任所有包，信任后所有包内的对象均可序列化传输
+  jms:
+    pub-sub-domain: false  #目的地是topic还是queue，false为queue，true为topic
+
+myqueue: boot-activemq-queue

@@ -9,7 +9,7 @@ import javax.jms.*;
  * @Date 2021/5/8 16:42
  */
 public class PersistProducer {
-    private static String ACTIVEMQ_URL = "tcp://192.168.30.130:61616";
+    private static String ACTIVEMQ_URL = "tcp://192.168.175.128:61616";
     private static String TOPIC_NAME = "my_topic";
 
     public static void main(String[] args) {
