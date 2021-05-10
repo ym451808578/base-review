@@ -12,6 +12,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/boot-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-review/pom.xml" />
       </list>
     </option>
   </component>

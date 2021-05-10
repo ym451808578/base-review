@@ -1,0 +1,6 @@
+server:
+  port: 8001
+
+school:
+  id: scut
+  name: 华工
