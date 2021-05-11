@@ -1,6 +1,6 @@
 package com.example.bootreview.config;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +11,10 @@ import org.springframework.core.annotation.Order;
 import java.util.Arrays;
 
 /**
+ * ApplicationRunner执行优先级高于CommandLineRunner
+ * 以Bean的形式运行的Runner优先级要低于Component注解加implements Runner接口的方式
+ * Order注解只能保证同类的CommandLineRunner或ApplicationRunner的执行顺序，不能跨类保证顺序
+ *
  * @author Castle
  * @Date 2021/5/11 17:30
  */
