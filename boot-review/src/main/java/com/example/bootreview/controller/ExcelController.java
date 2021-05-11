@@ -2,7 +2,6 @@ package com.example.bootreview.controller;
 
 import com.example.bootreview.entity.Student;
 import com.example.bootreview.service.ResponseToXlsConverter;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

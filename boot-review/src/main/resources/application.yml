@@ -1,6 +1,26 @@
 server:
   port: 8001
-
+spring:
+  mvc:
+    static-path-pattern: /**
 school:
   id: scut
   name: 华工
+
+family:
+  family-name: "happy family"
+  father:
+    name: zimug
+    age: 18
+  mother:
+    alias:
+      - lovely
+      - ailice
+  child:
+    name: zimug
+    age: 5
+    friends:
+      - hobby: football
+        sex:  male
+      - hobby: basketball
+        sex: female
