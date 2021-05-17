@@ -33,7 +33,7 @@ class SchoolManager {
         List<SchoolEmployee> list = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
             SchoolEmployee schoolEmployee = new SchoolEmployee();
-            schoolEmployee.setId(i + "");
+            //schoolEmployee.setId(i + "");
             list.add(schoolEmployee);
         }
         return list;
@@ -45,7 +45,7 @@ class Manager {
         List<Employee> list = new ArrayList<>(5);
         for (int i = 0; i < 5; i++) {
             Employee employee = new Employee();
-            employee.setId(i + "");
+            //employee.setId(i + "");
             list.add(employee);
         }
         return list;
