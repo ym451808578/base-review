@@ -14,8 +14,12 @@
         <module name="nio" />
         <module name="io" />
         <module name="bio" />
+        <module name="thread" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boot-web-review" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
