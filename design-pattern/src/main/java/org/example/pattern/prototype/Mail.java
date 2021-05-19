@@ -1,5 +1,6 @@
 package org.example.pattern.prototype;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @Date 2021/5/18 8:54
  */
 @Data
+@AllArgsConstructor
 public class Mail implements Cloneable {
 
     private String username;

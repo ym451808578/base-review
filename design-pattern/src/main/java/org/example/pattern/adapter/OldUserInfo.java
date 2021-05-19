@@ -17,4 +17,20 @@ public class OldUserInfo {
     private Map<String, String> officeInfo = new HashMap<String, String>() {{
         put("pos", "manager");
     }};
+
+    public Map<String, String> getBaseInfo() {
+        return baseInfo;
+    }
+
+    public void setBaseInfo(Map<String, String> baseInfo) {
+        this.baseInfo = baseInfo;
+    }
+
+    public Map<String, String> getOfficeInfo() {
+        return officeInfo;
+    }
+
+    public void setOfficeInfo(Map<String, String> officeInfo) {
+        this.officeInfo = officeInfo;
+    }
 }
