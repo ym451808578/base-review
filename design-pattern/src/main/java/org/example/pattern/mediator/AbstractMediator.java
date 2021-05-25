@@ -16,5 +16,4 @@ public abstract class AbstractMediator {
     }
 
     public abstract void execute(String str, Object... args);
-
 }
