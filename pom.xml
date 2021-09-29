@@ -17,6 +17,8 @@
         <module>thread</module>
         <module>boot-mq</module>
         <module>boot-review</module>
+        <module>rabbitmq-consumer</module>
+        <module>rabbitmq-producer</module>
     </modules>
 
     <name>base-review</name>
