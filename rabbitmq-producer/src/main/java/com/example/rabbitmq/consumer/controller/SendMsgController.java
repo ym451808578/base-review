@@ -1,5 +1,6 @@
 package com.example.rabbitmq.consumer.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.example.rabbitmq.consumer.config.RabbitMQConfig;
 import com.example.rabbitmq.consumer.entity.Msg;
 import lombok.ToString;
@@ -29,7 +30,7 @@ public class SendMsgController {
         Msg msg = new Msg(id, "消息内容来自：" + id);
         log.info("msg:{}", msg);
         log.info("key:{}", key);
-        rabbitTemplate.convertAndSend(RabbitMQConfig.BILL_TOPIC_EXCHANGE, key, msg);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.BILL_TOPIC_EXCHANGE, key, JSONUtil.toJsonStr(msg));
         return msg;
     }
 }
