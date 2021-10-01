@@ -3,19 +3,16 @@ server:
 
 spring:
   rabbitmq:
-    virtual-host: admin
-    username: admin
-    password: admin
-    addresses: 192.168.30.128:5672,192.168.30.129:5672,192.168.30.130:5672
-#    addresses: 127.0.0.1:5672
-#    username: guest
-#    password: guest
-#    virtual-host: /
+    #    virtual-host: admin
+    #    username: admin
+    #    password: admin
+    #    addresses: 192.168.30.128:5672,192.168.30.129:5672,192.168.30.130:5672
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    virtual-host: /
     listener:
       direct:
         acknowledge-mode: manual
-        retry:
-          enabled: on
-          max-attempts: 5
       simple:
         acknowledge-mode: manual

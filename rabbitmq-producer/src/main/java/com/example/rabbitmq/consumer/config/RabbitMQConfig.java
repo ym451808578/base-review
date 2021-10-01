@@ -21,13 +21,23 @@ public class RabbitMQConfig {
      */
     public static final String BILL_QUEUE = "bill_queue";
 
+    public static final String BILL_ROUTE_KEY = "bill.#";
+
+    public static final int BILL_QUEUE_TTL = 30000;
+    /**
+     * 死信队列
+     */
+    public static final String DEAD_QUEUE = "dead_queue";
+    public static final String DEAD_EXCHANGE = "dead_exchange";
+    public static final String DEAD_ROUTE_KEY = "dead_route_key";
+
     /**
      * 声明交换机
      *
      * @return
      */
     @Bean("billTopicExchange")
-    public Exchange topicExchange() {
+    public TopicExchange billTopicExchange() {
         //durable 开启持久化
         return ExchangeBuilder.topicExchange(BILL_TOPIC_EXCHANGE).durable(true).build();
     }
@@ -38,22 +48,55 @@ public class RabbitMQConfig {
      * @return
      */
     @Bean("billQueue")
-    public Queue itemQueue() {
+    public Queue billQueue() {
         //持久化队列
-        return QueueBuilder.durable(BILL_QUEUE).build();
+        return QueueBuilder.durable(BILL_QUEUE)
+                //.ttl(BILL_QUEUE_TTL)
+                //设置死信队列的路由key
+                .deadLetterRoutingKey(DEAD_ROUTE_KEY)
+                //设置私信队列的交换机
+                .deadLetterExchange(DEAD_EXCHANGE)
+                .build();
     }
 
     /**
      * 绑定队列和交换机
      *
-     * @param queue
-     * @param exchange
      * @return
      */
     @Bean
     public Binding billQueueExchange(@Qualifier("billQueue") Queue queue,
-                                     @Qualifier("billTopicExchange") Exchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with("bill.#").noargs();
+                                     @Qualifier("billTopicExchange") TopicExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with(BILL_ROUTE_KEY);
     }
 
+    /**
+     * 配置死信队列
+     *
+     * @return
+     */
+    @Bean("deadQueue")
+    public Queue deadQueue() {
+        return QueueBuilder.durable(DEAD_QUEUE).build();
+    }
+
+    /**
+     * 死信交换机
+     *
+     * @return
+     */
+    @Bean("deadExchange")
+    public TopicExchange deadExchange() {
+        return ExchangeBuilder.topicExchange(DEAD_EXCHANGE).durable(true).build();
+    }
+
+    /**
+     * 绑定死信队列和交换机
+     *
+     * @return
+     */
+    @Bean
+    public Binding deadBinding() {
+        return BindingBuilder.bind(deadQueue()).to(deadExchange()).with(DEAD_ROUTE_KEY);
+    }
 }
